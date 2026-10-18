@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yeurys Matos González · Redes y Cloud</title>
+<meta name="description" content="Portafolio de Yeurys Matos González: estudiante de Redes de la Información en ITLA, Azure AZ-900 y laboratorios de Azure con Terraform.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F7FA;--surface:#FFFFFF;--ink:#0F2236;--muted:#4C6177;--line:#CFDCE6;--blue:#1565D8;--amber:#C77700;--node:#E4EEF7;--hero:#0F2236;--hero-ink:#EAF3FB;--hero-muted:#9DB5C9;--hero-accent:#FFB429;--code-bg:#0B1724;--code-ink:#D6E4F0}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1724;--surface:#12253A;--ink:#E8F1F8;--muted:#9DB5C9;--line:#244058;--blue:#5AA2FF;--amber:#FFB429;--node:#1A3350;--hero:#07111C}}
+:root[data-theme="dark"]{--bg:#0B1724;--surface:#12253A;--ink:#E8F1F8;--muted:#9DB5C9;--line:#244058;--blue:#5AA2FF;--amber:#FFB429;--node:#1A3350;--hero:#07111C}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--hero) 94%,transparent);backdrop-filter:blur(8px)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:58px}
+nav b{font-family:"Bricolage Grotesque",sans-serif;color:var(--hero-ink);font-size:18px}
+nav div{display:flex;gap:22px}
+nav a{color:var(--hero-muted);text-decoration:none;font-size:15px}
+nav a:hover{color:var(--hero-accent)}
+.hero{background:var(--hero);color:var(--hero-ink);padding:72px 0 80px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,6.4vw,4.9rem);font-weight:800;letter-spacing:-.025em}
+.hero p{color:var(--hero-muted);max-width:30em;margin:22px 0 30px;font-size:1.12rem}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 20px;border-radius:10px;font:500 1rem "IBM Plex Sans",sans-serif;text-decoration:none;border:1.5px solid var(--hero-muted);color:var(--hero-ink);background:none;cursor:pointer;transition:transform .15s}
+.btn.main{background:var(--hero-accent);border-color:var(--hero-accent);color:#0F2236}
+.btn:hover{transform:translateY(-2px)}
+.hero svg{width:100%;height:auto}
+.hero-note{font-size:.95rem;color:var(--hero-muted);margin-top:8px}
+section{padding:76px 0}
+section h2{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:700;margin-bottom:12px}
+.lead{color:var(--muted);max-width:38em;margin:0 0 36px}
+.two,.cert{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px}
+.box h3{font-size:1.3rem;margin-bottom:6px}
+.box>p{margin:0 0 16px;color:var(--muted);font-size:.97rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
+.tags li{background:var(--node);border-radius:6px;padding:4px 11px;font-size:.88rem;font-weight:500}
+.cert .box{border-left:6px solid var(--blue)}
+.cert .next{border-left-color:var(--amber)}
+.cert small{color:var(--muted);display:block;margin-top:4px}
+.badge{display:inline-block;font-size:.85rem;font-weight:500;padding:2px 10px;border-radius:20px;margin-bottom:10px;background:var(--node)}
+.projects{display:grid;gap:30px}
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:34px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:30px;align-items:center}
+.proj:nth-child(even) .shot{order:2}
+.proj h3{font-size:1.55rem;margin-bottom:10px}
+.proj p{color:var(--muted);margin:0 0 16px}
+.proj .btns{margin-top:20px}
+.proj .btn{color:var(--ink);border-color:var(--line)}
+.proj .btn.main{color:#0F2236;border-color:var(--hero-accent)}
+.shot{position:relative;display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:12px;background:#fff;cursor:zoom-in;overflow:hidden}
+.shot img{display:block;width:100%;height:auto;max-height:440px;object-fit:contain}
+.shot span{position:absolute;right:10px;bottom:10px;background:var(--hero);color:var(--hero-ink);font-size:.82rem;padding:3px 10px;border-radius:20px}
+dialog{border:0;padding:0;border-radius:16px;background:var(--surface);color:var(--ink);max-width:min(1000px,94vw);width:100%;max-height:92vh}
+dialog::backdrop{background:rgba(5,12,20,.78)}
+.dh{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.dh b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.1rem}
+.dh .btn{padding:6px 14px;font-size:.9rem;color:var(--ink);border-color:var(--line)}
+.dh div{display:flex;gap:8px}
+#lbImg{display:block;max-width:100%;max-height:78vh;margin:0 auto;background:#fff}
+pre{margin:0;background:var(--code-bg);color:var(--code-ink);overflow:auto;max-height:72vh;padding:18px;font:13.5px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;border-radius:0 0 16px 16px;tab-size:2}
+.c{color:#6F8CA6}.s{color:#9FE0A6}.k{color:#FFB429}.r{color:#7DB8FF}
+.contact{text-align:center;background:var(--hero);color:var(--hero-ink)}
+.contact .lead{margin-inline:auto;color:var(--hero-muted)}
+.contact .btns{justify-content:center}
+footer{background:var(--hero);color:var(--hero-muted);text-align:center;padding:0 24px 34px;font-size:.9rem}
+.nd rect{fill:#12253A;stroke:#5AA2FF;stroke-width:1.6}.nd text{fill:#EAF3FB;font:500 12px "IBM Plex Sans",sans-serif;text-anchor:middle}
+.ln{stroke:#5AA2FF;stroke-width:2}.ln.dash{stroke:#FFB429;stroke-dasharray:6 5}.cap{fill:#9DB5C9;font:400 10px "IBM Plex Sans",sans-serif;text-anchor:middle}.pk{fill:#FFB429}
+@media(max-width:820px){.hero .wrap,.two,.cert,.proj{grid-template-columns:1fr}.proj:nth-child(even) .shot{order:0}nav div{gap:14px}nav a{font-size:14px}.proj{padding:20px}}
+@media(prefers-reduced-motion:reduce){.pk{display:none}html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>YMG</b><div><a href="#sobre">Sobre mí</a><a href="#skills">Skills</a><a href="#certs">Certificaciones</a><a href="#proyectos">Proyectos</a><a href="#contacto">Contacto</a></div></div></nav>
+
+<header class="hero"><div class="wrap">
+<div>
+<h1>Yeurys Matos González</h1>
+<p>Estudiante de Redes de la Información en el ITLA. Me muevo entre el switching y el enrutamiento tradicional y la nube: hoy construyo redes en Azure con Terraform.</p>
+<div class="btns"><a class="btn main" href="#proyectos">Ver proyectos</a><a class="btn" href="#contacto">Contactarme</a></div>
+</div>
+<div>
+<svg viewBox="0 0 420 170" role="img" aria-label="Un paquete viajando desde la red del campus, a través de una VPN, hasta Azure">
+<line class="ln" x1="101" y1="85" x2="165" y2="85"/><line class="ln dash" x1="255" y1="85" x2="319" y2="85"/>
+<text class="cap" x="287" y="70">túnel</text>
+<g class="nd"><rect x="11" y="66" width="90" height="38" rx="9"/><text x="56" y="89">Red ITLA</text></g>
+<g class="nd"><rect x="165" y="66" width="90" height="38" rx="9"/><text x="210" y="89">VPN</text></g>
+<g class="nd"><rect x="319" y="66" width="90" height="38" rx="9"/><text x="364" y="89">Azure</text></g>
+<circle class="pk" r="5.5"><animateMotion dur="4.5s" repeatCount="indefinite" path="M56 85 L364 85"/></circle>
+</svg>
+<div class="hero-note">Un paquete en camino: de la red local a Azure.</div>
+</div>
+</div></header>
+
+<section id="sobre"><div class="wrap">
+<h2>Sobre mí</h2>
+<p class="lead">Aprendí redes con equipos y topologías de laboratorio: VLANs, protocolos de enrutamiento y alta disponibilidad. Ahora llevo esa lógica a Azure y la describo como código, para que cada red se pueda desplegar, revisar y repetir.</p>
+</div></section>
+
+<section id="skills" style="padding-top:0"><div class="wrap">
+<h2>Habilidades técnicas</h2>
+<p class="lead">Dos mundos que se explican entre sí.</p>
+<div class="two">
+<div class="box"><h3>Redes tradicionales</h3><p>Conocimiento profundo en enrutamiento y switching.</p>
+<ul class="tags"><li>OSPF</li><li>BGP</li><li>HSRP</li><li>VLANs</li><li>EtherChannel</li><li>NAT/PAT</li></ul></div>
+<div class="box"><h3>Cloud e Infraestructura como Código</h3><p>Automatización de infraestructura en Microsoft Azure con Terraform (nivel inicial, en crecimiento).</p>
+<ul class="tags"><li>Microsoft Azure</li><li>Terraform</li><li>VNet Peering</li><li>Azure Firewall</li><li>VPN Site-to-Site</li><li>Private Endpoints</li><li>NAT Gateway</li></ul></div>
+</div>
+</div></section>
+
+<section id="certs" style="padding-top:0"><div class="wrap">
+<h2>Certificaciones</h2>
+<p class="lead">Una lograda y la siguiente en preparación.</p>
+<div class="cert">
+<div class="box"><span class="badge">Obtenida</span><h3>Microsoft Certified: Azure Fundamentals</h3><small>AZ-900 · 19 de agosto de 2026</small></div>
+<div class="box next"><span class="badge">En preparación</span><h3>Azure Network Engineer Associate</h3><small>AZ-700 · estudio activo</small></div>
+</div>
+</div></section>
+
+<section id="proyectos" style="padding-top:0"><div class="wrap">
+<h2>Proyectos: laboratorios de Azure con Terraform</h2>
+<p class="lead">Cuatro arquitecturas desplegadas como código. Toca un diagrama para verlo en grande y usa “Ver código” para leer el Terraform.</p>
+<div class="projects" id="projects"></div>
+</div></section>
+
+<section class="contact" id="contacto"><div class="wrap">
+<h2>Hablemos</h2>
+<p class="lead">Si buscas a alguien con base sólida en redes y ganas de crecer en cloud, escríbeme.</p>
+<div class="btns">
+<a class="btn main" href="mailto:TU-CORREO@ejemplo.com">Enviar un correo</a>
+<a class="btn" href="https://github.com/TU-USUARIO">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/TU-USUARIO">LinkedIn</a>
+</div>
+</div></section>
+<footer>© 2026 Yeurys Matos González</footer>
+
+<dialog id="lb" aria-label="Diagrama ampliado"><div class="dh"><b id="lbT"></b><div><button class="btn" data-close>Cerrar</button></div></div><img id="lbImg" alt=""></dialog>
+<dialog id="cd" aria-label="Código Terraform"><div class="dh"><b id="cdT"></b><div><button class="btn" id="cp">Copiar</button><a class="btn" id="dl" download>Descargar</a><button class="btn" data-close>Cerrar</button></div></div><pre><code id="cdC"></code></pre></dialog>
+
+<script>
+var CODE={"private-endpoint": {"file": "Private_Endpoint.tf", "src": "resource \"azurerm_resource_group\" \"rg\"{\n    name = \"rg-lab-eastus\"\n    location = \"eastus\"\n\n    tags = {\n  enviroment = \"LAB\"\n  project = \"PRIVATE-ENDPOINT\"\n  owner = \"Yeurys\"\n  cost_center = \"departamento-Yeurys\"\n}\n\n    }\n\nresource \"azurerm_virtual_network\" \"VNET-LAB\" {\n    name = \"vnet1\"\n    location = azurerm_resource_group.rg.location\n    resource_group_name = azurerm_resource_group.rg.name\n    address_space = [\"192.168.0.0/16\"]\n}\n\nresource \"azurerm_subnet\" \"SUBNET\" {\n    name = \"subnet-lab\"\n    resource_group_name = azurerm_resource_group.rg.name\n    virtual_network_name = azurerm_virtual_network.VNET-LAB.name\n    address_prefixes = [\"192.168.10.0/24\"]\n}\n\nresource \"azurerm_storage_account\" \"Blob-storage\" {\n    name = \"yeurysblobstrg001\"\n    resource_group_name = azurerm_resource_group.rg.name\n    location = azurerm_resource_group.rg.location\n    account_tier = \"Standard\"\n    account_replication_type = \"LRS\"\npublic_network_access_enabled = false\n}\n\nresource \"azurerm_private_dns_zone\" \"dns-privado\" {\n    name = \"privatelink.blob.core.windows.net\"\n    resource_group_name = azurerm_resource_group.rg.name\n}\n\nresource \"azurerm_private_dns_zone_virtual_network_link\" \"dns-link\" {\n    name = \"private-dns-link\"\n    resource_group_name = azurerm_resource_group.rg.name\n    private_dns_zone_name = azurerm_private_dns_zone.dns-privado.name\n    virtual_network_id = azurerm_virtual_network.VNET-LAB.id\n}\n\nresource \"azurerm_private_endpoint\" \"PE\" {\n    name = \"PE-LAB\"\n    location = azurerm_resource_group.rg.location\n    resource_group_name = azurerm_resource_group.rg.name\n    subnet_id = azurerm_subnet.SUBNET.id\n\n    private_service_connection {\n        name = \"conexion-privada-storage\"\n        private_connection_resource_id =azurerm_storage_account.Blob-storage.id\n        subresource_names = [\"blob\"]\n        is_manual_connection = false\n    }\n\n    private_dns_zone_group {\n        name = \"dns-group-storage\"\n        private_dns_zone_ids = [azurerm_private_dns_zone.dns-privado.id]\n\n    }\n}\n"}, "vpn-vnet-to-vnet": {"file": "VPN_V2V.tf", "src": "variable \"admin_password\" {\n  type      = string\n  sensitive = true\n}\n\nvariable \"shared_key\" {\n  type      = string\n  sensitive = true\n}\n\nresource \"azurerm_resource_group\" \"RG01\" {\n    name = \"RGEAST\"\n    location = \"eastus\"\ntags = {\n  enviroment = \"Dev\"\n  project = \"WebApp\"\n  owner = \"Developers\"\n  cost-center = \"DevDepartment\"\n}\n}\n#####################################################################################################################\nresource \"azurerm_virtual_network\" \"vnet01\" {\n  name = \"RED1\"\n  location = azurerm_resource_group.RG01.location\n  resource_group_name = azurerm_resource_group.RG01.name\n  address_space = [\"192.168.0.0/16\"]\n}\n#####################################################################################################################\nresource \"azurerm_subnet\" \"SubNet1\" {\n    name = \"Dev-subnet\"\n    virtual_network_name = azurerm_virtual_network.vnet01.name\n    resource_group_name = azurerm_resource_group.RG01.name\n    address_prefixes = [\"192.168.10.0/24\"]\n}\n#####################################################################################################################\nresource \"azurerm_network_interface\" \"NIC01\" {\n  name = \"nic1\"\n  location = azurerm_resource_group.RG01.location\n  resource_group_name = azurerm_resource_group.RG01.name\n\n  ip_configuration  {\n    name = \"internal01\"\n    subnet_id = azurerm_subnet.SubNet1.id\n    private_ip_address_allocation = \"Dynamic\"\n\n  }\n\n}\n#####################################################################################################################\nresource \"azurerm_windows_virtual_machine\" \"VM01\" {\n  name = \"vm1\"\n  location = azurerm_resource_group.RG01.location\n  resource_group_name = azurerm_resource_group.RG01.name\n  size = \"Standard_D4_v5\" \n  admin_username = \"Yeurys1\"\n  admin_password = var.admin_password\nnetwork_interface_ids = [\n  azurerm_network_interface.NIC01.id,\n]\n\nos_disk {\n  caching = \"ReadWrite\"\n  storage_account_type = \"Standard_LRS\"\n}\n\nsource_image_reference {\n  publisher = \"MicrosoftWindowsServer\"\n  sku = \"2022-DataCenter\"\n  offer = \"WindowsServer\"\n  version = \"latest\"\n}\n\n}\n#####################################################################################################################\nresource \"azurerm_public_ip\" \"eastpip\" {\n  name = \"pip01\"\n  location = azurerm_resource_group.RG01.location\n  resource_group_name = azurerm_resource_group.RG01.name\n  allocation_method = \"Dynamic\"\n}\n#####################################################################################################################\nresource \"azurerm_subnet\" \"vpngw01\" {\n  name = \"GatewaySubnet\"\n  virtual_network_name = azurerm_virtual_network.vnet01.name\n  resource_group_name = azurerm_resource_group.RG01.name\n  address_prefixes = [\"192.168.15.0/29\"]\n}\n\n#####################################################################################################################\nresource \"azurerm_virtual_network_gateway\" \"VPN-EAST\" {\n  name = \"GatewaySubnet\"\n  location = azurerm_resource_group.RG01.location\n  resource_group_name = azurerm_resource_group.RG01.name\n\n  type = \"Vpn\"\nvpn_type = \"RouteBased\"\nsku = \"Basic\"\n\nip_configuration {\n  public_ip_address_id = azurerm_public_ip.eastpip.id\n  subnet_id = azurerm_subnet.vpngw01.id\n  private_ip_address_allocation = \"Dynamic\"\n}\n\n}\n\n#####################################################################################################################\nresource \"azurerm_virtual_network_gateway_connection\" \"EAST-WEST\" {\n  name = \"east-west\"\n  location = azurerm_resource_group.RG01.location\n  resource_group_name = azurerm_resource_group.RG01.name\n\n  type = \"Vnet2Vnet\"\n  virtual_network_gateway_id = azurerm_virtual_network_gateway.VPN-EAST.id\n  peer_virtual_network_gateway_id = azurerm_virtual_network_gateway.VPN-WEST.id\n  shared_key = var.shared_key\n}\n\n#####################################################################################################################\nresource \"azurerm_resource_group\" \"RG02\" {\n    name = \"RGWEST\"\n    location = \"westus\"\ntags = {\n  enviroment = \"test\"\n  project = \"WebApp\"\n  owner = \"Testers\"\n  cost-center = \"TestDepartment\"\n}\n}\n#####################################################################################################################\nresource \"azurerm_virtual_network\" \"vnet02\" {\n  name = \"RED2\"\n  location = azurerm_resource_group.RG02.location\n  resource_group_name = azurerm_resource_group.RG02.name\n  address_space = [\"192.169.0.0/16\"]\n}\n#####################################################################################################################\nresource \"azurerm_subnet\" \"SubNet2\" {\n    name = \"Test-subnet\"\n    virtual_network_name = azurerm_virtual_network.vnet02.name\n    resource_group_name = azurerm_resource_group.RG02.name\n    address_prefixes = [\"192.169.20.0/24\"]\n}\n#####################################################################################################################\nresource \"azurerm_network_interface\" \"NIC02\" {\n  name = \"nic2\"\n  location = azurerm_resource_group.RG02.location\n  resource_group_name = azurerm_resource_group.RG02.name\n\n  ip_configuration  {\n    name = \"internal02\"\n    subnet_id = azurerm_subnet.SubNet2.id\n    private_ip_address_allocation = \"Dynamic\"\n\n  }\n\n}\n#####################################################################################################################\nresource \"azurerm_windows_virtual_machine\" \"VM02\" {\n  name = \"vm2\"\n  location = azurerm_resource_group.RG02.location\n  resource_group_name = azurerm_resource_group.RG02.name\n  size = \"Standard_D4_v5\" \n  admin_username = \"Yeurys\"\n  admin_password = var.admin_password\nnetwork_interface_ids = [\n  azurerm_network_interface.NIC02.id,\n]\n\nos_disk {\n  caching = \"ReadWrite\"\n  storage_account_type = \"Standard_LRS\"\n}\n\nsource_image_reference {\n  publisher = \"MicrosoftWindowsServer\"\n  sku = \"2022-DataCenter\"\n  offer = \"WindowsServer\"\n  version = \"latest\"\n}\n\n}\n#####################################################################################################################\nresource \"azurerm_public_ip\" \"westpip\" {\n  name = \"pip02\"\n  location = azurerm_resource_group.RG02.location\n  resource_group_name = azurerm_resource_group.RG02.name\n  allocation_method = \"Dynamic\"\n}\n#####################################################################################################################\nresource \"azurerm_subnet\" \"vpngw02\" {\n  name = \"GatewaySubnet\"\n  virtual_network_name = azurerm_virtual_network.vnet02.name\n  resource_group_name = azurerm_resource_group.RG02.name\n  address_prefixes = [\"192.169.25.0/29\"]\n}\n\n#####################################################################################################################\nresource \"azurerm_virtual_network_gateway\" \"VPN-WEST\" {\n  name = \"west2east\"\n  location = azurerm_resource_group.RG02.location\n  resource_group_name = azurerm_resource_group.RG02.name\n\n  type = \"Vpn\"\nvpn_type = \"RouteBased\"\nsku = \"Basic\"\n\nip_configuration {\n  public_ip_address_id = azurerm_public_ip.westpip.id\n  subnet_id = azurerm_subnet.vpngw02.id\n  private_ip_address_allocation = \"Dynamic\"\n}\n\n}\n#####################################################################################################################\nresource \"azurerm_virtual_network_gateway_connection\" \"WEST-EAST\" {\n  name = \"west-east\"\n  location = azurerm_resource_group.RG02.location\n  resource_group_name = azurerm_resource_group.RG02.name\n\n  type = \"Vnet2Vnet\"\n  virtual_network_gateway_id = azurerm_virtual_network_gateway.VPN-WEST.id\n  peer_virtual_network_gateway_id = azurerm_virtual_network_gateway.VPN-EAST.id\n  shared_key = var.shared_key\n}\n#####################################################################################################################\n"}, "nat": {"file": "NAT.tf", "src": "variable \"admin_password\" {\n  type      = string\n  sensitive = true\n}\n\nresource \"azurerm_resource_group\" \"RG\" {\n    name = \"LAB\"\n    location = \"westeurope\"\n    tags = {\n        enviroment = \"LAB\"\n        project = \"Nat\"\n        owner = \"Yeurys\"\n        cost_center = \"Yeurys-group\"\n\n    }\n}\n\nresource \"azurerm_virtual_network\" \"VNET\" {\n    name = \"virtual network 00\"\n    location = azurerm_resource_group.RG.location\n    resource_group_name = azurerm_resource_group.RG.name\n    address_space = [\"192.168.0.0/16\"]\n  \n}\n\nresource \"azurerm_subnet\" \"SUBNET\" {\n    name = \"subnetA\"\n    resource_group_name = azurerm_resource_group.RG.name\n    virtual_network_name = azurerm_virtual_network.VNET.name\n    address_prefixes = [\"192.168.20.0/24\"]\n}\n\nresource \"azurerm_network_interface\" \"NIC\" {\n    name = \"nic01\"\n    location = azurerm_resource_group.RG.location\n    resource_group_name = azurerm_resource_group.RG.name\n\n    ip_configuration {\n      name = \"internal\"\n      subnet_id = azurerm_subnet.SUBNET.id\n      private_ip_address_allocation = \"Dynamic\"\n    }\n}\n\nresource \"azurerm_windows_virtual_machine\" \"Windows-VM\" {\n  name = \"VM\"\n  location = azurerm_resource_group.RG.location\n  resource_group_name = azurerm_resource_group.RG.name\nsize = \"Standard_D4_v5\"\nadmin_username = \"yeurys\"\nadmin_password = var.admin_password\nnetwork_interface_ids = [\n    azurerm_network_interface.NIC.id\n]\n\nos_disk {\n  caching = \"ReadWrite\"\n  storage_account_type = \"Standard_LRS\"\n}\n\nsource_image_reference {\n  publisher = \"MicrosoftWindowsServer\"\n  offer = \"WindowsServer\"\n  sku = \"2022-datacenter\"\n  version = \"latest\"\n}\n\n}\n\nresource \"azurerm_nat_gateway\" \"NATGW\" {\n  name = \"natgw\"\n  location = azurerm_resource_group.RG.location\n  resource_group_name = azurerm_resource_group.RG.name\n  sku_name = \"Standard\"\n  idle_timeout_in_minutes = 10\n  zones = [\"1\"]\n}\n\nresource \"azurerm_public_ip\" \"PIP\" {\n    name = \"NAT-PIP\"\n    location = azurerm_resource_group.RG.location\n    resource_group_name = azurerm_resource_group.RG.name\n    allocation_method = \"Static\"\n    sku = \"Standard\"\n}\n\nresource \"azurerm_nat_gateway_public_ip_association\" \"AsociacicionNatPIP\" {\n  nat_gateway_id = azurerm_nat_gateway.NATGW.id\n  public_ip_address_id = azurerm_public_ip.PIP.id\n}\n\nresource \"azurerm_subnet_nat_gateway_association\" \"AsociacionSubnetNat\" {\n    nat_gateway_id = azurerm_nat_gateway.NATGW.id\n    subnet_id = azurerm_subnet.SUBNET.id\n}\n"}, "peering-firewall": {"file": "PEERING_LAB.tf", "src": "variable \"admin_password\" {\n  type      = string\n  sensitive = true\n}\n\n\n\n\nresource \"azurerm_resource_group\" \"RG1\" {\nname = \"rg1-lab-webapp-westus\"\nlocation = \"westus\"\ntags = {\n  enviroment = \"lab\"\n  project = \"webapp\"\n  owner = \"lab-group\"\n  cost_center = \"departamento-lab\"\n}\n\n}\n############################################################################################\nresource \"azurerm_virtual_network\" \"vnet1\" {\nname =  \"virtual-network-1\"\nlocation = azurerm_resource_group.RG1.location\nresource_group_name = azurerm_resource_group.RG1.name\naddress_space = [ \"192.168.0.0/16\" ]\n\n}\n############################################################################################\nresource \"azurerm_subnet\" \"subnet1\" {\n  name = \"vnet1-subnet\"\n  resource_group_name = azurerm_resource_group.RG1.name\n  virtual_network_name = azurerm_virtual_network.vnet1.name\n  address_prefixes = [\"192.168.10.0/24\"]\n}\n############################################################################################\nresource \"azurerm_network_interface\" \"nic1\" {\n  count = 50\n  name = \"vm-nic1-${count.index}\"\n  location = azurerm_resource_group.RG1.location\n  resource_group_name = azurerm_resource_group.RG1.name\n  \n  ip_configuration {\n    name = \"internal1\"\n    subnet_id = azurerm_subnet.subnet1.id\n    private_ip_address_allocation = \"Dynamic\"\n  }\n}\n############################################################################################\nresource \"azurerm_windows_virtual_machine\" \"vm1\" {\n  count = 50\n  name = \"vm-west-${count.index}\"\n resource_group_name = azurerm_resource_group.RG1.name\n  location = azurerm_resource_group.RG1.location\nsize = \"Standard_D4_v5\"\nadmin_username = \"Yeurys1\"\nadmin_password = var.admin_password\nnetwork_interface_ids = [\nazurerm_network_interface.nic1[count.index].id,\n]\n\nos_disk {\n  caching = \"ReadWrite\"\n  storage_account_type = \"Standard_LRS\"\n}\n\nsource_image_reference {\n  publisher = \"MicrosoftWindowsServer\"\n  offer = \"WindowsServer\"\n  sku = \"2022-datacenter\"\n  version = \"latest\"\n}\n}\n############################################################################################\n\nresource \"azurerm_virtual_network_peering\" \"vnet1-2\" {\n  name = \"peering-1to2\"\nresource_group_name = azurerm_resource_group.RG1.name\nvirtual_network_name = azurerm_virtual_network.vnet1.name\nremote_virtual_network_id = azurerm_virtual_network.vnet2.id\n  allow_forwarded_traffic   = true\n}\n############################################################################################\nresource \"azurerm_route_table\" \"route_table2\" {\n  name                = \"route-table-west\"\n  location            = azurerm_resource_group.RG1.location\n  resource_group_name = azurerm_resource_group.RG1.name\n\n  route {\n    name                   = \"route-to-firewall-east\"\n    address_prefix         = \"0.0.0.0/0\"\n    next_hop_type          = \"VirtualAppliance\"\n    next_hop_in_ip_address = azurerm_firewall.firewall1.ip_configuration[0].private_ip_address\n  }\n}\n\nresource \"azurerm_subnet_route_table_association\" \"asociacion_subnet1\" {\n  subnet_id      = azurerm_subnet.subnet1.id\n  route_table_id = azurerm_route_table.route_table2.id\n}\n\n############################################################################################\n\nresource \"azurerm_resource_group\" \"RG2\" {\nname = \"rg2-lab-webapp-eastus\"\nlocation = \"eastus\"\ntags = {\n  enviroment = \"lab\"\n  project = \"webapp\"\n  owner = \"lab-group\"\n  cost_center = \"departamento-lab\"\n}\n}\n############################################################################################\nresource \"azurerm_virtual_network\" \"vnet2\" {\nname =  \"virtual-network-2\"\nlocation = azurerm_resource_group.RG2.location\nresource_group_name = azurerm_resource_group.RG2.name\naddress_space = [ \"192.169.0.0/16\" ]\n}\n############################################################################################\nresource \"azurerm_subnet\" \"subnet2\" {\n  name = \"vnet2-subnet\"\n  resource_group_name = azurerm_resource_group.RG2.name\n  virtual_network_name = azurerm_virtual_network.vnet2.name\n  address_prefixes = [\"192.169.20.0/24\"]\n}\n############################################################################################\nresource \"azurerm_subnet\" \"subnet3\" {\n  name = \"AzureFirewallSubnet\"\n  resource_group_name = azurerm_resource_group.RG2.name\n  virtual_network_name = azurerm_virtual_network.vnet2.name\n  address_prefixes = [\"192.169.22.0/26\"]\n}\n###################################################################################\nresource \"azurerm_public_ip\" \"firewall_ip\"{\nname = \"firewall-ip1\"\nlocation = azurerm_resource_group.RG2.location\nresource_group_name = azurerm_resource_group.RG2.name\nallocation_method = \"Static\"\nsku = \"Standard\"\n}\n\n############################################################################################\nresource \"azurerm_firewall\" \"firewall1\" {\n  name                = \"firewall1\"\n  location            = azurerm_resource_group.RG2.location\n  resource_group_name = azurerm_resource_group.RG2.name\nsku_name = \"AZFW_VNet\"\n  sku_tier = \"Standard\"\n\n  ip_configuration {\n    name                 = \"configuration\"\n    subnet_id            = azurerm_subnet.subnet3.id\n    public_ip_address_id = azurerm_public_ip.firewall_ip.id\n    \n  }\n}\n############################################################################################\nresource \"azurerm_firewall_network_rule_collection\" \"internet_rule\" {\n  name                = \"allow-internet-traffic\"\n  azure_firewall_name = azurerm_firewall.firewall1.name\n  resource_group_name = azurerm_resource_group.RG2.name\n  priority = 200 \n  action  = \"Allow\"\n\n  rule {\n    name                  = \"allow-http-https\"\n    source_addresses      = [\"192.168.10.0/24\", \"192.169.20.0/24\"] \n    destination_addresses = [\"*\"] \n    destination_ports     = [\"80\", \"443\"] \n    protocols             = [\"TCP\"]\n  }\n}\n############################################################################################\nresource \"azurerm_route_table\" \"route_table1\" {\n  name                = \"route-table1\"\n  location            = azurerm_resource_group.RG2.location\n  resource_group_name = azurerm_resource_group.RG2.name\n\n  route {\n    name = \"route-to0firewall\"\n    address_prefix = \"0.0.0.0/0\"\n    next_hop_type = \"VirtualAppliance\"\n    next_hop_in_ip_address = azurerm_firewall.firewall1.ip_configuration[0].private_ip_address\n\n   \n  }\n}\n\n############################################################################################\n resource \"azurerm_subnet_route_table_association\" \"asociacion_subnet2\" {\n  subnet_id      = azurerm_subnet.subnet2.id\n  route_table_id = azurerm_route_table.route_table1.id\n}\n############################################################################################\n\nresource \"azurerm_network_interface\" \"nic2\" {\n count = 50\n  name = \"vm-nic2-${count.index}\"\n  location = azurerm_resource_group.RG2.location\n  resource_group_name = azurerm_resource_group.RG2.name\n  \n  ip_configuration {\n    name = \"internal2\"\n    subnet_id = azurerm_subnet.subnet2.id\n    private_ip_address_allocation = \"Dynamic\"\n  }\n}\n############################################################################################\nresource \"azurerm_windows_virtual_machine\" \"vm2\" {\n count = 50\n  name = \"vm-east-${count.index}\"\n resource_group_name = azurerm_resource_group.RG2.name\n  location = azurerm_resource_group.RG2.location\nsize = \"Standard_D4_v5\"\nadmin_username = \"Yeurys2\"\nadmin_password = var.admin_password\nnetwork_interface_ids = [\nazurerm_network_interface.nic2[count.index].id,\n]\n\nos_disk {\n  caching = \"ReadWrite\"\n  storage_account_type = \"Standard_LRS\"\n}\n\nsource_image_reference {\n  publisher = \"MicrosoftWindowsServer\"\n  offer = \"WindowsServer\"\n  sku = \"2022-datacenter\"\n  version = \"latest\"\n}\n}\n############################################################################################\nresource \"azurerm_virtual_network_peering\" \"vnet2-1\" {\n  name = \"peering-2to1\"\nresource_group_name = azurerm_resource_group.RG2.name\nvirtual_network_name = azurerm_virtual_network.vnet2.name\nremote_virtual_network_id = azurerm_virtual_network.vnet1.id\n  allow_forwarded_traffic   = true\n}\n#########################################################################################\n"}};
+var USER="TU-USUARIO", REPO="TU-REPOSITORIO";
+var P=[
+ {k:"private-endpoint",t:"Private Endpoint",img:"images/private-endpoint.png",alt:"Diagrama de Private Endpoint hacia una cuenta de almacenamiento Blob con zona DNS privada",
+  d:"Una cuenta de almacenamiento sin acceso público, alcanzable solo desde la VNet. El Private Endpoint le da una IP privada dentro de la subnet y una zona DNS privada resuelve el nombre del blob hacia esa IP.",
+  tags:["East US","Private Endpoint","Storage Account","Private DNS","Terraform"]},
+ {k:"vpn-vnet-to-vnet",t:"VPN VNet-to-VNet",img:"images/vpn-vnet-to-vnet.png",alt:"Diagrama de dos VNets en East US y West US unidas por VPN Gateways",
+  d:"Dos redes virtuales en regiones distintas (East US y West US) unidas por un túnel entre sus VPN Gateways. Cada lado tiene su conexión Vnet2Vnet y una VM para probar la comunicación.",
+  tags:["East US","West US","VPN Gateway","Vnet2Vnet","Terraform"]},
+ {k:"nat",t:"Asociación de NAT a una subnet",img:"images/nat.png",alt:"Diagrama de NAT Gateway asociado a una subnet con una VM Windows",
+  d:"Salida a internet controlada: un NAT Gateway Standard con IP pública estática asociado a la subnet, de modo que la VM Windows sale siempre por la misma IP.",
+  tags:["West Europe","NAT Gateway","Public IP","Windows Server 2022","Terraform"]},
+ {k:"peering-firewall",t:"VNet Peering e inspección con Azure Firewall",img:"images/peering-firewall.png",alt:"Diagrama de dos VNets con peering y un Azure Firewall en East US",
+  d:"Dos VNets en West US y East US con peering en ambos sentidos. Las tablas de rutas envían el tráfico (0.0.0.0/0) hacia Azure Firewall, donde una regla de red permite HTTP y HTTPS y el resto se inspecciona.",
+  tags:["West US","East US","VNet Peering","Azure Firewall","Route Tables","Terraform"]}
+];
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function hl(s){
+  return esc(s).replace(/(#.*$)|(&quot;[^\n]*?&quot;|"[^"\n]*")|\b(resource|variable|type|sensitive)\b|(azurerm_\w+)/gm,function(m,c,st,k,r){
+    return c?'<span class="c">'+c+'</span>':st?'<span class="s">'+st+'</span>':k?'<span class="k">'+k+'</span>':'<span class="r">'+r+'</span>';
+  });
+}
+var root=document.getElementById('projects');
+P.forEach(function(p,i){
+  var el=document.createElement('article');el.className='proj';
+  el.innerHTML='<button class="shot" data-img="'+p.img+'" data-t="'+p.t+'" aria-label="Ampliar diagrama: '+p.t+'"><img src="'+p.img+'" alt="'+p.alt+'" loading="lazy"><span>Ampliar</span></button>'+
+   '<div><h3>'+p.t+'</h3><p>'+p.d+'</p><ul class="tags">'+p.tags.map(function(x){return'<li>'+x+'</li>'}).join('')+'</ul>'+
+   '<div class="btns"><button class="btn main" data-code="'+p.k+'" data-t="'+p.t+'">Ver código</button>'+
+   '<a class="btn" href="https://github.com/'+USER+'/'+REPO+'/blob/main/code/'+CODE[p.k].file+'">Abrir en GitHub</a></div></div>';
+  root.appendChild(el);
+});
+var lb=document.getElementById('lb'),cd=document.getElementById('cd'),cur='';
+document.addEventListener('click',function(e){
+  var t=e.target.closest('button,a');if(!t)return;
+  if(t.dataset.img){document.getElementById('lbImg').src=t.dataset.img;document.getElementById('lbImg').alt=t.dataset.t;document.getElementById('lbT').textContent=t.dataset.t;lb.showModal()}
+  else if(t.dataset.code){var c=CODE[t.dataset.code];cur=c.src;document.getElementById('cdT').textContent=t.dataset.t+' · '+c.file;
+    document.getElementById('cdC').innerHTML=hl(c.src);
+    document.getElementById('dl').href='code/'+c.file;document.getElementById('dl').setAttribute('download',c.file);
+    document.getElementById('cp').textContent='Copiar';cd.showModal()}
+  else if(t.id==='cp'){(navigator.clipboard?navigator.clipboard.writeText(cur):Promise.reject()).then(function(){t.textContent='Copiado'},function(){t.textContent='Selecciona y copia a mano'})}
+  else if(t.hasAttribute('data-close')){t.closest('dialog').close()}
+});
+[lb,cd].forEach(function(d){d.addEventListener('click',function(e){if(e.target===d)d.close()})});
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+vnet_name = "Vnet-01"
+resource_group_name = "RG-01"
+subnet_name = "SUBNET-01"
+admin_user = "Yeurys-01"
+admin_pass = "Yeurys@#@@*#$723"
